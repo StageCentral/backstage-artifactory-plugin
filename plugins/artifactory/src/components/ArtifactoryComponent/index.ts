@@ -1,0 +1,1 @@
+export { ArtifactoryComponent } from './ArtifactoryComponent';
