@@ -2,7 +2,7 @@ import React from 'react';
 import { Entity } from '@backstage/catalog-model';
 import { EntityProvider } from '@backstage/plugin-catalog-react';
 import { createDevApp } from '@backstage/dev-utils';
-import { ArtifactoryPlugin, EntityArtifactoryContent } from '../src/plugin';
+import { EntityArtifactoryContent, ArtifactoryPlugin } from '../src/plugin';
 import { ArtifactoryPluginApi, ArtifactoryPluginApiRef } from '../src';
 import { TestApiProvider } from '@backstage/test-utils';
 
@@ -24,10 +24,14 @@ class MockArtifactoryPluginClient implements ArtifactoryPluginApi {
   async getHealth(): Promise<{ status: string; }> {
     return { status: 'ok'};
   }
+  async getArtifacts(): Promise<any> {
+    return { artifacts: []};
+  }  
+
 }
 
 createDevApp()
-  .registerPlugin(ArtifactoryPluginApiRef)
+  .registerPlugin(ArtifactoryPlugin)
   .addPage({
     element: (
       <TestApiProvider

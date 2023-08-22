@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Grid } from '@material-ui/core';
-import { EntityArtifactoryContent } from '@internal/plugin-artifactory';
+import { EntityArtifactoryContent } from '@stagecentral/plugin-artifactory';
 import {
   EntityApiDefinitionCard,
   EntityConsumedApisCard,

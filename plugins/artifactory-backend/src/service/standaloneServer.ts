@@ -1,21 +1,29 @@
 import { createServiceBuilder } from '@backstage/backend-common';
 import { Server } from 'http';
 import { Logger } from 'winston';
+import { CatalogApi } from '@backstage/catalog-client';
+import { Config } from '@backstage/config';
 import { createRouter } from './router';
 
 export interface ServerOptions {
   port: number;
   enableCors: boolean;
   logger: Logger;
+  config: Config;
+  catalogApi: CatalogApi;
 }
 
 export async function startStandaloneServer(
   options: ServerOptions,
 ): Promise<Server> {
   const logger = options.logger.child({ service: 'artifactory-backend-backend' });
+  const config = options.config.getConfig('artifactory');
+  const catalogApi = options.catalogApi;  
   logger.debug('Starting application server...');
   const router = await createRouter({
     logger,
+    config,
+    catalogApi,
   });
 
   let service = createServiceBuilder(module)

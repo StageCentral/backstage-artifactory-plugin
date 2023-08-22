@@ -18,7 +18,7 @@ describe('ArtifactoryComponent', () => {
   // setup mock response
   beforeEach(() => {
     server.use(
-      rest.get('/*', (_, res, ctx) => res(ctx.status(200), ctx.json({}))),
+      rest.get('/*', (_: any, res: (arg0: any, arg1: any) => any, ctx: { status: (arg0: number) => any; json: (arg0: {}) => any; }) => res(ctx.status(200), ctx.json({}))),
     );
   });
 

@@ -11,8 +11,8 @@ import {
   stringifyEntityRef,
 } from '@backstage/catalog-model';
 import { CatalogApi } from '@backstage/catalog-client';
-import { InputError, AuthenticationError } from '@backstage/errors';
-import { getBearerTokenFromAuthorizationHeader } from '@backstage/plugin-auth-node';
+import { InputError } from '@backstage/errors';
+//import { getBearerTokenFromAuthorizationHeader } from '@backstage/plugin-auth-node';
 
 
 export interface RouterOptions {

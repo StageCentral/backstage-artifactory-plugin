@@ -1,6 +1,5 @@
 import { JfrogClient } from "jfrog-client-js";
 import { Logger } from 'winston';
-import { errorHandler, UrlReader } from '@backstage/backend-common';
 import { Config } from '@backstage/config';
 import { Entity } from '@backstage/catalog-model';
 
@@ -28,7 +27,6 @@ type Artifactory = {
     logger: Logger;
     client: JfrogClient;
     config: Config;
-    getArtifactsByName(name: string): Promise<Artifact[]>;
     getArtifacts(entity: Entity): Promise<Artifact[]>;
     };
 

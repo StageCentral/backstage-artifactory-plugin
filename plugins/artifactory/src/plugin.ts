@@ -4,7 +4,6 @@ import {
   createPlugin,
   createRoutableExtension,
   discoveryApiRef,
-  configApiRef,
 } from '@backstage/core-plugin-api';
 import { ArtifactoryPluginBackendClient } from './api/ArtifactoryPluginBackendClient';
 import { ArtifactoryPluginApiRef } from './api';
@@ -18,10 +17,9 @@ export const ArtifactoryPlugin = createPlugin({
       api: ArtifactoryPluginApiRef,
       deps: {
         discoveryApi: discoveryApiRef,
-        configApi: configApiRef,
       },
-      factory: ({ discoveryApi, configApi}) =>
-        new ArtifactoryPluginBackendClient({ discoveryApi, configApi }),
+      factory: ({ discoveryApi}) =>
+        new ArtifactoryPluginBackendClient({ discoveryApi }),
     }),
   ],
   routes: {
