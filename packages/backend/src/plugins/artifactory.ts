@@ -1,4 +1,4 @@
-import { createRouter } from '@internal/plugin-artifactory-backend';
+import { createRouter } from '@stagecentral/plugin-artifactory-backend';
 import { Router } from 'express';
 import { PluginEnvironment } from '../types';
 import { CatalogClient } from '@backstage/catalog-client';

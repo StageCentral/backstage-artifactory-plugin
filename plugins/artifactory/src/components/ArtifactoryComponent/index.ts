@@ -1,1 +1,0 @@
-export { ArtifactoryComponent } from './ArtifactoryComponent';

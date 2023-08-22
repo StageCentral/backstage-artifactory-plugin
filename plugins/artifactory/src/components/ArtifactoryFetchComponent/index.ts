@@ -1,1 +1,0 @@
-export { ArtifactoryFetchComponent } from './ArtifactoryFetchComponent';
