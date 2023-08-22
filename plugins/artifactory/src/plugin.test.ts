@@ -1,7 +1,7 @@
-import { otom8OArtifactoryPlugin } from './plugin';
+import { ArtifactoryPlugin } from './plugin';
 
-describe('otom8o-artifactory', () => {
+describe('stagecentral-artifactory', () => {
   it('should export plugin', () => {
-    expect(otom8OArtifactoryPlugin).toBeDefined();
+    expect(ArtifactoryPlugin).toBeDefined();
   });
 });

@@ -12,7 +12,7 @@ export interface ServerOptions {
 export async function startStandaloneServer(
   options: ServerOptions,
 ): Promise<Server> {
-  const logger = options.logger.child({ service: 'otom8o-artifactory-backend-backend' });
+  const logger = options.logger.child({ service: 'artifactory-backend-backend' });
   logger.debug('Starting application server...');
   const router = await createRouter({
     logger,
@@ -20,7 +20,7 @@ export async function startStandaloneServer(
 
   let service = createServiceBuilder(module)
     .setPort(options.port)
-    .addRouter('/otom8o-artifactory-backend', router);
+    .addRouter('/artifactory-backend', router);
   if (options.enableCors) {
     service = service.enableCors({ origin: 'http://localhost:3000' });
   }

@@ -28,6 +28,6 @@ describe('ArtifactoryComponent', () => {
         <ArtifactoryComponent />
       </ThemeProvider>,
     );
-    expect(screen.getByText('Welcome to otom8o-artifactory!')).toBeInTheDocument();
+    expect(screen.getByText('Welcome to artifactory!')).toBeInTheDocument();
   });
 });

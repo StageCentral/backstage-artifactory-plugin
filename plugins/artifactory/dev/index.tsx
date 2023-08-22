@@ -2,8 +2,8 @@ import React from 'react';
 import { Entity } from '@backstage/catalog-model';
 import { EntityProvider } from '@backstage/plugin-catalog-react';
 import { createDevApp } from '@backstage/dev-utils';
-import { otom8OArtifactoryPlugin, Otom8OArtifactoryPage, EntityOtom8OArtifactoryContent } from '../src/plugin';
-import { otom8OArtifactoryPluginApi, otom8OArtifactoryPluginApiRef } from '../src';
+import { ArtifactoryPlugin, EntityArtifactoryContent } from '../src/plugin';
+import { ArtifactoryPluginApi, ArtifactoryPluginApiRef } from '../src';
 import { TestApiProvider } from '@backstage/test-utils';
 
 const mockEntity: Entity = {
@@ -20,25 +20,25 @@ const mockEntity: Entity = {
   },
 };
 
-class MockArtifactoryPluginClient implements otom8OArtifactoryPluginApi {
+class MockArtifactoryPluginClient implements ArtifactoryPluginApi {
   async getHealth(): Promise<{ status: string; }> {
     return { status: 'ok'};
   }
 }
 
 createDevApp()
-  .registerPlugin(otom8OArtifactoryPlugin)
+  .registerPlugin(ArtifactoryPluginApiRef)
   .addPage({
     element: (
       <TestApiProvider
-      apis={[[otom8OArtifactoryPluginApiRef, new MockArtifactoryPluginClient()]]} 
+      apis={[[ArtifactoryPluginApiRef, new MockArtifactoryPluginClient()]]} 
       >
         <EntityProvider entity={mockEntity}>
-          <EntityOtom8OArtifactoryContent />
+          <EntityArtifactoryContent />
         </EntityProvider>
       </TestApiProvider>
     ),
     title: 'Root Page',
-    path: '/otom8o-artifactory'
+    path: '/artifactory'
   })
   .render();

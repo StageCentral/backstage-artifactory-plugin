@@ -49,7 +49,7 @@ export class ArtifactoryApi implements Artifactory {
         this.logger = logger;
         this.config = config.getConfig('artifactory');
         this.client = new JfrogClient({
-            platformUrl: config.getString('url'), //'https://otomato.jfrog.io/',
+            platformUrl: config.getString('url'), 
             // artifactoryUrl - Set to use a custom Artifactory URL.
             // xrayUrl - Set to use a custom Xray URL.              
             username: config.getString('user'),

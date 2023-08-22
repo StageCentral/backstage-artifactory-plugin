@@ -7,7 +7,7 @@ export interface ArtifactoryPluginApi {
 }
 
 export const ArtifactoryPluginApiRef = createApiRef<ArtifactoryPluginApi>({
-  id: 'plugin.otom80artifactoryplugin.service',
+  id: 'plugin.artifactoryplugin.service',
 });
 
 export type Artifact = {
