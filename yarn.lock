@@ -5865,10 +5865,10 @@
   resolved "https://registry.yarnpkg.com/@spotify/prettier-config/-/prettier-config-12.0.0.tgz#936ca5e977cfccbccd1731ab98b1f2bf65852b5d"
   integrity sha512-64WWqE40U/WwWV8iIQBseTU+b2t+SdJSyQoCLdVPCKM9uf7KOjRivVwXe4KlWoV3y7duNSGuB2UgWhkXzscVmQ==
 
-"@stagecentral/plugin-artifactory-backend@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.npmjs.org/@stagecentral/plugin-artifactory-backend/-/plugin-artifactory-backend-0.1.0.tgz#709763f56d8062990b301ae8328d6651a02eb3d1"
-  integrity sha512-u/6T/czaYP42OrzVXPI95ZGxYczaBXn/JpzciRvxCdtVS/pMWFmDg4cPuvedi09nQwElFne52a0MmX3Jrxk+NQ==
+"@stagecentral/plugin-artifactory-backend@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.npmjs.org/@stagecentral/plugin-artifactory-backend/-/plugin-artifactory-backend-0.1.1.tgz#e8b5605715c250d7d102f7576dfe4b566cb457c6"
+  integrity sha512-iYNwkaicYR1hNYhwtZPnRrXHsElGIBk95qFpBbY9Dhy4bsAzFZxMXVAW4qzq4DGDNGXFxc41Mpv4g9dByge2aw==
   dependencies:
     "@backstage/backend-common" "^0.17.0"
     "@backstage/config" "^1.0.5"
@@ -5880,10 +5880,10 @@
     winston "^3.2.1"
     yn "^4.0.0"
 
-"@stagecentral/plugin-artifactory@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.npmjs.org/@stagecentral/plugin-artifactory/-/plugin-artifactory-0.1.0.tgz#87c13303d0f0fbfcd1187d9d9e5a81357eeb72f2"
-  integrity sha512-d65OF69F7ZJiKUGVPvBqxGnj8eSiUUmvhTVLCvh5w51VcBKQGk1o27uvLdtsHd5BFWlYBD26ERJfpAVCed6EPg==
+"@stagecentral/plugin-artifactory@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.npmjs.org/@stagecentral/plugin-artifactory/-/plugin-artifactory-0.1.1.tgz#154030f64e2d6b2ef70f72ed72f6cc1de3567485"
+  integrity sha512-x8R/McnX4D1QG4g5qE1RXKcmGMOWzrMsGocjYw+IkexH6vYWrBeF7T72QhApGoKIJlAX3+iknI2xyKJMNiCNbQ==
   dependencies:
     "@backstage/core-components" "^0.12.1"
     "@backstage/core-plugin-api" "^1.2.0"
@@ -7388,7 +7388,7 @@ anymatch@^3.0.3, anymatch@~3.1.2:
     "@backstage/theme" "^0.2.16"
     "@material-ui/core" "^4.12.2"
     "@material-ui/icons" "^4.9.1"
-    "@stagecentral/plugin-artifactory" "^0.1.0"
+    "@stagecentral/plugin-artifactory" "^0.1.1"
     history "^5.0.0"
     react "^17.0.2"
     react-dom "^17.0.2"

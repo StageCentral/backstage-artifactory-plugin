@@ -111,4 +111,4 @@ catalog:
 artifactory:
   user: ${ARTIFACTORY_USER}
   password: ${ARTIFACTORY_PASSWORD}
-  url: https://stagecentral.jfrog.io
+  url: https://otomato.jfrog.io
