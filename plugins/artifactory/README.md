@@ -1,13 +1,51 @@
-# stagecentral-artifactory
+# Jfrog Artifactory Plugin for Backstage by StageCentral
 
-Welcome to the stagecentral-artifactory plugin!
+Welcome to the Artifactory plugin for Backstage!
 
-_This plugin was created through the Backstage CLI_
+The purpose of this plugin is to bring software artifacts forward - where developer can see them.
+You can now easily connect your software components and services to their binary artifacts and browse the relevant artifacts directly from your Bacsktage IDP.
 
-## Getting started
+## Important - the Backend Plugin
 
-Your plugin has been added to the example app in this repository, meaning you'll be able to access it by running `yarn start` in the root directory, and then navigating to [/artifactory](http://localhost:3000/artifactory).
+In order to use this plugin please also install the [Artifactory Backend plugin](https://www.npmjs.com/package/@stagecentral/plugin-artifactory-backend)
 
-You can also serve the plugin in isolation by running `yarn start` in the plugin directory.
-This method of serving the plugin provides quicker iteration speed and a faster startup and hot reloads.
-It is only meant for local development, and the setup for it can be found inside the [/dev](./dev) directory.
+## Installation
+
+Yarn:
+`yarn add @stagecentral/plugin-artifactory`
+
+Npm:
+`npm -i @stagecentral/plugin-artifactory`
+
+## Add the 'Artifactory' tab to your entity pages:
+
+In `packages/app/src/components/catalog/EntityPage.tsx`:
+
+```javascript
+import { EntityArtifactoryContent } from '@stagecentral/plugin-artifactory';
+...
+
+const serviceEntityPage = (
+  <EntityLayout>
+    
+    /* Add the route after other EntityLayout.Route entries */
+
+    <EntityLayout.Route path="/artifactory" title="Artifactory">
+      <EntityArtifactoryContent />
+    </EntityLayout.Route>
+
+  </EntityLayout>
+);
+```
+
+## Configuration
+
+Most of the configuration is needed in the correspnding backend plugin.
+This plugin only uses the Artifactory URL in order to generate artifact paths in the UI.
+In your `app-config.yaml` (or wherever you inject Backstage config from):
+```yaml
+artifactory:
+    url: https://myorg.jfrog.io
+```
+
+Note: this is the URL to Jfrog platform. The plugin adds `/artifactory` to this path.
