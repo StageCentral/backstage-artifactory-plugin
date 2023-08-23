@@ -5,6 +5,8 @@ Welcome to the Artifactory Backend plugin for Backstage!
 The purpose of this plugin is to bring software artifacts forward - where developers can see them.
 You can now easily connect your software components and services to their binary artifacts and browse the relevant artifacts directly from your Bacsktage IDP.
 
+This plugin uses [jfrog-client-js](https://github.com/jfrog/jfrog-client-js) to connect to Jfrog, so it can potentially be extended to also expose data from XRay and the rest of the Jfrog Platform.
+
 ## Important - the Frontend Plugin
 
 This plugin was originally created to provide Jfrog API connection for the [Artifactory plugin for Backstage](https://www.npmjs.com/package/@stagecentral/plugin-artifactory) 
