@@ -20,6 +20,20 @@ Currently the frontend plugin allows you to add a tab showing the list of the ar
 Artifacts are matched by their name or property.
 Default property name is `catalog.component` but is configurable.
 
+## Configuration
+
+For the configuration of the plugins - refer to their respective documentation: [frontend](./plugins/artifactory/README.md), [backend](./plugins/artifactory-backend/README.md)
+
+### Connecting Artifacts to Entities
+
+By default artifacts are looked up with the following AQL (Artifactory Query Language): 
+```
+items.find({"$or":[{"@ARTIFACT_PROPERTY":{"$eq":"ENTITY_NAME"},"path":{"$eq":"ENTITY_NAME"}}],"type":"folder","path":{"$ne":"."},"name":{"$ne":"_uploads"}})
+```
+Whereas default `ARTIFACT_PROPERTY` is `catalog.component` but can be modified by setting `artifactory.artifactProperty` in 'app-config.yaml`.
+
+`ENTITY_NAME` by default is the actual entity name but can be modified by setting `metadata.annotations.backstage.io/artifactory-id` in `catalog-info.yaml` of the entity.
+
 
 Brought to you with love by [StageCentral](https://stagecentral.io)
 
