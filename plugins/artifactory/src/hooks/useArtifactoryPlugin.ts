@@ -22,7 +22,7 @@ export const useArtifactoryObjects = (entity: Entity ) => {
     }
     useEffect(() => {
       getObjects();
-    });
+    }, []);
     return {
       error,
       loading,
